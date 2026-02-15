@@ -1,0 +1,83 @@
+<div class="services-page">
+  <div class="page-hero">
+    <div class="hero-pattern"></div>
+    <div class="container">
+      <h1 class="page-title fade-in-up">Our Services</h1>
+      <p class="page-subtitle fade-in-up delay-1">Comprehensive technology solutions for your business</p>
+    </div>
+  </div>
+
+  <section class="services-section">
+    <div class="container">
+      @for (service of services; track service.title; let i = $index) {
+        <div class="service-detailed" [class.reverse]="i % 2 !== 0">
+          <div class="service-visual">
+            <div class="service-icon-big">{{ service.icon }}</div>
+            <div class="service-decoration"></div>
+          </div>
+          
+          <div class="service-content">
+            <h2>{{ service.title }}</h2>
+            <p class="service-description">{{ service.description }}</p>
+            
+            <div class="features-list">
+              <h3>Key Features</h3>
+              <ul>
+                @for (feature of service.features; track feature) {
+                  <li>
+                    <span class="check-icon">✓</span>
+                    <span>{{ feature }}</span>
+                  </li>
+                }
+              </ul>
+            </div>
+            
+            <button class="contact-btn">
+              <span>Get Started</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="process-section">
+    <div class="container">
+      <h2 class="section-title">Our Process</h2>
+      <p class="section-subtitle">How we bring your vision to life</p>
+      
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h3>Discovery</h3>
+          <p>Understanding your needs and goals</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h3>Design</h3>
+          <p>Creating intuitive user experiences</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h3>Development</h3>
+          <p>Building with cutting-edge technology</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h3>Deployment</h3>
+          <p>Launching your solution with confidence</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <h3>Support</h3>
+          <p>Ongoing maintenance and improvements</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
